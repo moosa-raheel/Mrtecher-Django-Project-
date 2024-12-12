@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Mrtecher - Signup{% endblock title %}
+{% block content %}
+<h1 class="text-center text-6xl my-4">Signup</h1>
+<form  method="post" class="max-w-[1200px] w-[90%] my-8 mx-auto" >
+    {% csrf_token %}
+    {% for field in form %}
+    <label for="{{field.id_for_label}}" class="block text-xl my-5">{{ field.label }} : </label>
+    <input type="{{ field.field.widget.input_type }}" name="{{field.name}}" id="{{field.id_for_label}}" class="w-full">
+    {% if field.errors %}
+    <span class="error text-red-500 text-lg">{{field.errors | striptags}}</span>
+    {% endif %}
+    {% endfor %}
+    {% if form.non_field_errors %}
+    <span class="error text-red-500  my-5 block text-2xl">{{form.non_field_errors}}</span>
+    {% endif %}
+    <a href="{% url "login" %}" class="text-right block w-full my-3 text-sky-500 text-xl">already have an account?</a>
+    <input type="submit" value="signup" class="bg-blue-800 w-full text-white py-3 text-xl my-6 rounded-lg cursor-pointer">
+</form>
+{% endblock content %}

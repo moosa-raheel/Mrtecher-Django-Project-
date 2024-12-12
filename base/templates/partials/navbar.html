@@ -1,0 +1,14 @@
+<nav class="h-28 px-20 flex justify-between items-center  shadow-lg sticky top-0 left-0 w-full z-30 bg-white">
+    <a href="" class="logo text-4xl">MRTECHER</a>
+    <ul class="flex gap-16">
+        <li><a href="{% url "home" %}" class="text-2xl">Home</a></li>
+        <li><a href="#" class="text-2xl">About</a></li>
+        {% if not request.user.is_authenticated %}
+        <li><a href="{% url "signup" %}" class="text-2xl">Signup</a></li>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+        <li><a href="{% url "logout" %}" class="text-2xl">Logout</a></li>
+        {% endif %}
+        <li><a href="#" class="text-2xl">Contact</a></li>
+    </ul>
+</nav>
