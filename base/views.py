@@ -50,6 +50,7 @@ class Login(View):
         else:
             return HttpResponseRedirect("/")
         
+# Logout View 
 def logout_page(request):
     logout(request)
     return HttpResponseRedirect("/")

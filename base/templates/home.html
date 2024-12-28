@@ -8,4 +8,31 @@
     </div>
 
 </header>
+
+<h1 class="text-center text-4xl my-4">Available Jobs</h1>
+<div class="max-w-[1400px] w-[90%] my-10 mx-auto  flex justify-between">
+
+    {% comment %} Jobs Card  {% endcomment %}
+    <div class="w-[24rem] h-72 bg-emerald-400 relative">
+        <img src="{% static "images/graphic.jpg" %}" alt="" class="w-full h-full object-cover object-center">
+        <div class="overlay w-full h-full bg-[#000000b0] absolute top-0 left-0 flex flex-col items-center justify-center gap-7">
+            <h2 class="text-white text-3xl font-bold">Graphic Designer</h2>
+            <a href="{% url "resume_upload"%}?job=graphic"><button class=" py-2 px-4 text-white border-white border-2 hover:bg-blue-800 transition-all duration-700">Apply Now</button></a>
+        </div>
+    </div>
+
+    {% comment %} Jobs Card  {% endcomment %}
+    <div class="w-[24rem] h-72 relative">
+        <img src="{% static "images/web.jpg" %}" alt="" class="w-full h-full object-cover object-center">
+        <div class="overlay w-full h-full bg-[#000000b0] absolute top-0 left-0"></div>
+    </div>
+
+    {% comment %} Jobs Card  {% endcomment %}
+    <div class="w-[24rem] h-72 bg-emerald-400 relative">
+        <img src="{% static "images/ai.jpg" %}" alt="" class="w-full h-full object-cover object-center">
+        <div class="overlay w-full h-full bg-[#000000b0] absolute top-0 left-0"></div>
+    </div>
+
+
+</div>
 {% endblock content %}

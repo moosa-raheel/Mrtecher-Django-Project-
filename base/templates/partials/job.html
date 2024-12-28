@@ -1,0 +1,8 @@
+{% load static %}
+<div class="w-[24rem] h-72 bg-emerald-400 relative">
+    <img src="{% static "images/graphic.jpg" %}" alt="" class="w-full h-full object-cover object-center">
+    <div class="overlay w-full h-full bg-[#000000b0] absolute top-0 left-0 flex flex-col items-center justify-center gap-7">
+        <h2 class="text-white text-3xl font-bold">{{job}}</h2>
+        <button class=" py-2 px-4 text-white border-white border-2 hover:bg-blue-800 transition-all duration-700">Apply Now</button>
+    </div>
+</div>

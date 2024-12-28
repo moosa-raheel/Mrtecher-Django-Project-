@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 # User Registration Form 
@@ -10,4 +10,3 @@ class Registration(UserCreationForm):
         model = User
         fields = ("first_name","last_name","username","email")
         error_messages = {"username":{"required":"Please enter username"}}
-        

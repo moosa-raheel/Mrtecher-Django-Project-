@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+<h1 class="text-center text-6xl my-10 font-medium text-gray-800">
+  Apply For Job
+</h1>
+<form method="post" class="max-w-[1400px] w-[90%] mx-auto">
+  {% csrf_token %} {% for field in form %}
+  <div class="my-4">
+    <label for="{{ field.id_for_label }}" class="block text-xl my-3">
+      {{ field.label }}:
+    </label>
+
+    {% if field.name == 'gender' %}
+    <div class="flex gap-4">{{ field }}</div>
+
+    {% elif field.name == 'state' %} {{ field }}
+    {% elif field.name == 'prefered_location' %} {{field}}
+     {% else %}
+    <input
+      type="{{ field.field.widget.input_type }}"
+      name="{{ field.name }}"
+      id="{{ field.id_for_label }}"
+      class="w-full p-3 border border-gray-300 rounded-md my-3"
+    />
+    {% endif %}
+  </div>
+  {% endfor %}
+  <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md">
+    Submit
+  </button>
+</form>
+{% endblock content %}
